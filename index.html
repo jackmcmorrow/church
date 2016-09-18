@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Church by lk-geimfari</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Church</h1>
+        <p>Church is a Python library that help you generate fake data.</p>
+
+        <p class="view"><a href="https://github.com/lk-geimfari/church">View the Project on GitHub <small>lk-geimfari/church</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lk-geimfari/church/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lk-geimfari/church/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lk-geimfari/church">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="church" class="anchor" href="#church" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Church</h1>
+
+<p><a href="https://travis-ci.org/lk-geimfari/church"><img src="https://travis-ci.org/lk-geimfari/church.svg?branch=master" alt="Build Status"></a>
+<a href="https://badge.fury.io/py/church"><img src="https://badge.fury.io/py/church.svg" alt="PyPI version"></a>
+<a href="https://github.com/lk-geimfari/church"><img src="https://hitt.herokuapp.com/lk-geimfar/church.svg" alt="HitCount"></a>
+<a href="https://www.codacy.com/app/likid-geimfari/church?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=lk-geimfari/church&amp;amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/d773f20efa67430683bb24fff5af9db8" alt="Codacy Badge"></a>
+<a href="https://github.com/lk-geimfari/church/issues"><img src="https://img.shields.io/github/issues/lk-geimfari/church.svg" alt="Issues"></a></p>
+
+<p><img src="https://raw.githubusercontent.com/lk-geimfari/church/master/examples/church.png" alt="alt text"></p>
+
+<p>Church - is a library to generate fake data. It's very useful if you need to bootstrap your database.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>➜  <span class="pl-k">~</span>  pip install church
+</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c">#  It's very useful if you need bootstrap your database.</span>
+<span class="pl-c"># ...</span>
+<span class="pl-c"># ... </span>
+
+<span class="pl-en">@</span><span class="pl-c1">staticmethod</span>
+<span class="pl-k">def</span> <span class="pl-en">_church</span>(<span class="pl-smi">c</span><span class="pl-k">=</span><span class="pl-c1">100</span>):
+    <span class="pl-k">from</span> church <span class="pl-k">import</span> Personal
+
+    ch <span class="pl-k">=</span> Personal(<span class="pl-s"><span class="pl-pds">'</span>en_us<span class="pl-pds">'</span></span>)
+    <span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">range</span>(c):
+        user <span class="pl-k">=</span> User(<span class="pl-v">username</span><span class="pl-k">=</span>ch.username(),
+                    <span class="pl-v">email</span><span class="pl-k">=</span>ch.email(),
+                    <span class="pl-v">name</span><span class="pl-k">=</span>ch.name(<span class="pl-s"><span class="pl-pds">'</span>m<span class="pl-pds">'</span></span>),
+                    <span class="pl-v">surname</span><span class="pl-k">=</span>ch.surname(),
+                    <span class="pl-v">credit_card</span><span class="pl-k">=</span>ch.credit_card_number(),
+                    <span class="pl-v">home_page</span><span class="pl-k">=</span>ch.home_page(),
+                    <span class="pl-v">password</span><span class="pl-k">=</span>ch.password(<span class="pl-v">length</span><span class="pl-k">=</span><span class="pl-c1">10</span>),
+                    <span class="pl-v">gender</span><span class="pl-k">=</span>ch.gender(<span class="pl-v">abbreviated</span><span class="pl-k">=</span><span class="pl-c1">True</span>),
+                    <span class="pl-v">profession</span><span class="pl-k">=</span>ch.profession(),
+                    <span class="pl-v">nationality</span><span class="pl-k">=</span>ch.nationality()
+                    )
+        <span class="pl-k">try</span>:
+            db.session.add(user)
+        <span class="pl-k">except</span> <span class="pl-c1">Exception</span>:
+            db.session.commit()
+
+<span class="pl-c"># ...</span>
+<span class="pl-c"># ...</span>
+</pre></div>
+
+<h2>
+<a id="docs" class="anchor" href="#docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docs</h2>
+
+<p>Church is pretty simple library. All that you need is small <a href="https://github.com/lk-geimfari/church/blob/master/docs/README.md">guidebook.</a></p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Your contributions are always welcome! Please take a look at the <a href="https://github.com/lk-geimfari/church/blob/master/CONTRIBUTING.md">contribution</a> guidelines first.</p>
+
+<h2>
+<a id="runtime" class="anchor" href="#runtime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Runtime</h2>
+
+<p>Python 2.7/ Python 3.x</p>
+
+<h2>
+<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licence</h2>
+
+<p><a href="https://github.com/lk-geimfari/church/blob/master/LICENSE">MIT Licence</a>   </p>
+
+<h2>
+<a id="why-church" class="anchor" href="#why-church" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why church?</h2>
+
+<p>«Such teachings come through hypocritical liars, whose consciences have been seared as with a hot iron.»</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lk-geimfari">lk-geimfari</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
