@@ -35,25 +35,25 @@
 <a href="https://badge.fury.io/py/church"><img src="https://badge.fury.io/py/church.svg" alt="PyPI version"></a>
 <a href="https://github.com/lk-geimfari/church"><img src="https://hitt.herokuapp.com/lk-geimfar/church.svg" alt="HitCount"></a>
 <a href="https://landscape.io/github/lk-geimfari/church/master"><img src="https://landscape.io/github/lk-geimfari/church/master/landscape.svg?style=flat" alt="Code Health"></a>
-<a href="https://www.codacy.com/app/likid-geimfari/church?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=lk-geimfari/church&amp;amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/d773f20efa67430683bb24fff5af9db8" alt="Codacy Badge"></a>
+<a href="https://www.codacy.com/app/likid-geimfari/church"><img src="https://api.codacy.com/project/badge/Grade/d773f20efa67430683bb24fff5af9db8" alt="Codacy Badge"></a>
 <a href="https://github.com/lk-geimfari/church/issues"><img src="https://img.shields.io/github/issues/lk-geimfari/church.svg" alt="Issues"></a></p>
 
 <p><img src="https://raw.githubusercontent.com/lk-geimfari/church/master/examples/church.png" alt="alt text"></p>
 
-<p>Church - is a library to generate fake data. It's very useful if you need to bootstrap your database.</p>
+<p>Church is a library to generate fake data. It's very useful when you need to bootstrap your database.</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<div class="highlight highlight-source-shell"><pre>➜  <span class="pl-k">~</span>  pip install church
-</pre></div>
+<div class="highlight highlight-source-shell"><pre>➜  <span class="pl-k">~</span>  pip install church</pre></div>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<div class="highlight highlight-source-python"><pre><span class="pl-c">#  It's very useful if you need to bootstrap your database.</span>
-<span class="pl-c"># Just create static method that will generate fake data.</span>
-<span class="pl-c"># ...</span>
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># At this moment a library has 4 supported locales: en_us, de_de, fr_fr, ru_ru</span>
+<span class="pl-c">#</span>
+<span class="pl-c"># It's very useful when you need to bootstrap your database.</span>
+<span class="pl-c"># Just create a static method that will generate fake data:</span>
 
 <span class="pl-en">@</span><span class="pl-c1">staticmethod</span>
 <span class="pl-k">def</span> <span class="pl-en">_bootstrap</span>(<span class="pl-smi">count</span><span class="pl-k">=</span><span class="pl-c1">2000</span>):
@@ -72,7 +72,7 @@
                     <span class="pl-v">gender</span><span class="pl-k">=</span>person.gender(<span class="pl-v">abbreviated</span><span class="pl-k">=</span><span class="pl-c1">True</span>),
                     <span class="pl-v">profession</span><span class="pl-k">=</span>person.profession(),
                     <span class="pl-v">nationality</span><span class="pl-k">=</span>person.nationality()
-                    )
+               )
         <span class="pl-k">try</span>:
             db.session.add(user)
         <span class="pl-k">except</span> <span class="pl-c1">Exception</span>:
@@ -83,12 +83,17 @@
 <h2>
 <a id="docs" class="anchor" href="#docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docs</h2>
 
-<p>Church is pretty simple library. All that you need is small <a href="https://github.com/lk-geimfari/church/blob/master/docs/README.md">guidebook.</a></p>
+<p>Church is a pretty simple library. All you need to start is a small <a href="https://github.com/lk-geimfari/church/blob/master/docs/README.md">guidebook.</a></p>
 
 <h2>
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>Your contributions are always welcome! Please take a look at the <a href="https://github.com/lk-geimfari/church/blob/master/CONTRIBUTING.md">contribution</a> guidelines first.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>No requirements, no dependencies</p>
 
 <h2>
 <a id="runtime" class="anchor" href="#runtime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Runtime</h2>
@@ -104,8 +109,6 @@
 <a id="why-church" class="anchor" href="#why-church" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why church?</h2>
 
 <p>«Such teachings come through hypocritical liars, whose consciences have been seared as with a hot iron.» Timothy 1:4</p>
-
-<p><code>If you offended by name of this library then you may don't use it.</code> <a href="https://github.com/lk-geimfari/church/issues/6"><code>Do Not Use!</code></a></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/lk-geimfari">lk-geimfari</a></p>
