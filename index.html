@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>Church</h1>
-        <p>Church is a Python library that help you generate fake data.</p>
+        <p>Church is a library to generate fake data. It&#39;s very useful when you need to bootstrap your database.</p>
 
         <p class="view"><a href="https://github.com/lk-geimfari/church">View the Project on GitHub <small>lk-geimfari/church</small></a></p>
 
@@ -32,7 +32,7 @@
 <a id="church" class="anchor" href="#church" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Church</h1>
 
 <p><a href="https://travis-ci.org/lk-geimfari/church"><img src="https://travis-ci.org/lk-geimfari/church.svg?branch=master" alt="Build Status"></a>
-<a href="https://pypi.python.org/pypi/church/"><img src="https://img.shields.io/badge/python-3.4%2C%203.5-blue.svg?maxAge=2592000" alt="PyPI"></a>
+<a href="https://pypi.python.org/pypi/church/"><img src="https://img.shields.io/badge/python-3.3%2C%203.4%2C%203.5%2C%203.6--dev-blue.svg" alt="PyPI"></a>
 <a href="https://badge.fury.io/py/church"><img src="https://badge.fury.io/py/church.svg" alt="PyPI version"></a>
 <a href="https://github.com/lk-geimfari/church"><img src="https://hitt.herokuapp.com/lk-geimfar/church.svg" alt="HitCount"></a>
 <a href="https://landscape.io/github/lk-geimfari/church/master"><img src="https://landscape.io/github/lk-geimfari/church/master/landscape.svg?style=flat" alt="Code Health"></a>
@@ -41,7 +41,22 @@
 
 <p><img src="https://raw.githubusercontent.com/lk-geimfari/church/master/examples/church.png" alt="alt text"></p>
 
-<p>Church is a library to generate fake data. It's very useful when you need to bootstrap your database. Church have not any requirements.</p>
+<p>Church is a library to generate fake data. It's very useful when you need to bootstrap your database. Church have not any requirements. Church is a pretty simple library. All you need to start is a small <a href="https://github.com/lk-geimfari/church/blob/master/docs/README.md">guidebook.</a></p>
+
+<p>At this moment a library has 5 supported locales: </p>
+
+<ul>
+<li>
+<g-emoji alias="us" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1fa-1f1f8.png" ios-version="6.0">🇺🇸</g-emoji> - English (en)</li>
+<li>
+<g-emoji alias="es" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1ea-1f1f8.png" ios-version="6.0">🇪🇸</g-emoji> - Spanish (es)</li>
+<li>
+<g-emoji alias="de" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1e9-1f1ea.png" ios-version="6.0">🇩🇪</g-emoji> - German  (de)</li>
+<li>
+<g-emoji alias="fr" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1eb-1f1f7.png" ios-version="6.0">🇫🇷</g-emoji> - French  (fr)</li>
+<li>
+<g-emoji alias="ru" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1f7-1f1fa.png" ios-version="6.0">🇷🇺</g-emoji> - Russian (ru)</li>
+</ul>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -56,12 +71,15 @@
 <div class="highlight highlight-source-shell"><pre>➜  <span class="pl-k">~</span>  pip install church</pre></div>
 
 <h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+<div class="highlight highlight-source-shell"><pre>➜  <span class="pl-k">~</span> <span class="pl-c1">cd</span> church/
+➜  python3 -m unittest</pre></div>
+
+<h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<div class="highlight highlight-source-python"><pre><span class="pl-c"># At this moment a library has 5 supported locales: </span>
-<span class="pl-c"># en_us, de_de, fr_fr, ru_ru and es_es</span>
-<span class="pl-c">#</span>
-<span class="pl-c"># It's very useful when you need to bootstrap your database.</span>
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># It's very useful when you need to bootstrap your database.</span>
 <span class="pl-c"># Just create a static method that will generate fake data:</span>
 
 
@@ -79,17 +97,11 @@
     <span class="pl-k">def</span> <span class="pl-c1">__init__</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-k">**</span><span class="pl-smi">kwargs</span>):
         <span class="pl-c1">super</span>(Patient, <span class="pl-v">self</span>).<span class="pl-c1">__init__</span>(<span class="pl-k">**</span>kwargs)
 
-    <span class="pl-k">def</span> <span class="pl-c1">__str__</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>):
-        <span class="pl-k">return</span> <span class="pl-v">self</span>.full_name
-
-    <span class="pl-k">def</span> <span class="pl-c1">__repr__</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>):
-        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;Patient: <span class="pl-c1">{0}</span>&gt;<span class="pl-pds">'</span></span>.format(<span class="pl-v">self</span>.full_name)
-
     <span class="pl-en">@</span><span class="pl-c1">staticmethod</span>
-    <span class="pl-k">def</span> <span class="pl-en">_churchify</span>(<span class="pl-smi">count</span><span class="pl-k">=</span><span class="pl-c1">2000</span>):
+    <span class="pl-k">def</span> <span class="pl-en">churchify</span>(<span class="pl-smi">count</span><span class="pl-k">=</span><span class="pl-c1">2000</span>):
         <span class="pl-k">from</span> church <span class="pl-k">import</span> Personal
 
-        person <span class="pl-k">=</span> Personal(<span class="pl-s"><span class="pl-pds">'</span>en_us<span class="pl-pds">'</span></span>)
+        person <span class="pl-k">=</span> Personal(<span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>)
         <span class="pl-k">for</span> _ <span class="pl-k">in</span> <span class="pl-c1">range</span>(count):
             patient <span class="pl-k">=</span> Patient(<span class="pl-v">email</span><span class="pl-k">=</span>person.email(),
                               <span class="pl-v">phone_number</span><span class="pl-k">=</span>person.telephone(),
@@ -105,6 +117,22 @@
         <span class="pl-k">except</span> <span class="pl-c1">Exception</span>:
             db.session.commit()</pre></div>
 
+<p>When you use only one locale, use following format:</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> church <span class="pl-k">import</span> Church
+
+ch <span class="pl-k">=</span> Church(<span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>)
+
+
+<span class="pl-k">def</span> <span class="pl-en">patient</span>(<span class="pl-smi">sex</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>):
+    user <span class="pl-k">=</span> {
+        <span class="pl-s"><span class="pl-pds">'</span>full_name<span class="pl-pds">'</span></span>: ch.personal.full_name(sex),
+        <span class="pl-s"><span class="pl-pds">'</span>gender<span class="pl-pds">'</span></span>: ch.personal.gender(sex),
+        <span class="pl-s"><span class="pl-pds">'</span>blood_type<span class="pl-pds">'</span></span>: ch.person.blood_type(),
+        <span class="pl-s"><span class="pl-pds">'</span>birthday<span class="pl-pds">'</span></span>: ch.datetime.birthday()
+    }
+    <span class="pl-k">return</span> user</pre></div>
+
 <h2>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
 
@@ -114,11 +142,6 @@
 <li>
 <a href="https://github.com/lk-geimfari/presturinn">presturinn</a> - This is a fake API based on <code>Falcon</code> and <code>Church v0.2.0</code> .</li>
 </ul>
-
-<h2>
-<a id="docs" class="anchor" href="#docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docs</h2>
-
-<p>Church is a pretty simple library. All you need to start is a small <a href="https://github.com/lk-geimfari/church/blob/master/docs/README.md">guidebook.</a></p>
 
 <h2>
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
@@ -138,7 +161,7 @@
 <h2>
 <a id="why-church" class="anchor" href="#why-church" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why church?</h2>
 
-<p>«Such teachings come through hypocritical liars, whose consciences have been seared as with a hot iron.» Timothy 1:</p>
+<p>«Such teachings come through hypocritical liars, whose consciences have been seared as with a hot iron.» Timothy 1:4</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/lk-geimfari">lk-geimfari</a></p>
